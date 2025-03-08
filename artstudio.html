@@ -20,7 +20,21 @@
         </div>
 
         <canvas id="canvas" width="600" height="400"></canvas>
-
+<div class="toolbar">
+    <label>🎨 Color: <input type="color" id="colorPicker" value="#000000"></label>
+    <label>🖌️ Brush Size: <input type="range" id="brushSize" min="1" max="20" value="5"></label>
+    <label>🖋️ Brush Type:
+        <select id="brushType">
+            <option value="round">Round</option>
+            <option value="square">Square</option>
+            <option value="spray">Spray</option>
+            <option value="texture">Texture</option>
+        </select>
+    </label>
+    <button id="eraserBtn">Eraser</button>
+    <button id="clearCanvas">Clear</button>
+    <button id="saveCanvas">Download</button>
+</div>
         <!-- Buttons for Release Notes & Upcoming Features -->
         <div class="info-buttons">
             <button id="releaseNotesBtn">📜 Release Notes</button>
