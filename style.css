@@ -61,3 +61,15 @@ button:hover {
     color: red;
     margin-top: 10px;
 }
+button {
+    background: #dc3545;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #c82333;
+}
