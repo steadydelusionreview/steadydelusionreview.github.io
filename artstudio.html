@@ -10,8 +10,16 @@
 <body>
     <div class="container">
         <h2>Art Studio</h2>
-        <canvas id="canvas" width="500" height="500"></canvas>
-        <button id="clearCanvas">Clear</button>
+        
+        <div class="toolbar">
+            <label>🎨 Color: <input type="color" id="colorPicker" value="#000000"></label>
+            <label>🖌️ Brush Size: <input type="range" id="brushSize" min="1" max="20" value="5"></label>
+            <button id="eraserBtn">Eraser</button>
+            <button id="clearCanvas">Clear</button>
+            <button id="saveCanvas">Download</button>
+        </div>
+
+        <canvas id="canvas" width="600" height="400"></canvas>
     </div>
 </body>
 </html>
