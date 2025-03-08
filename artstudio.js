@@ -5,6 +5,8 @@ const brushSize = document.getElementById("brushSize");
 const clearCanvas = document.getElementById("clearCanvas");
 const saveCanvas = document.getElementById("saveCanvas");
 const eraserBtn = document.getElementById("eraserBtn");
+const releaseNotesBtn = document.getElementById("releaseNotesBtn");
+const upcomingFeaturesBtn = document.getElementById("upcomingFeaturesBtn");
 
 let painting = false;
 let isErasing = false;
@@ -61,4 +63,47 @@ saveCanvas.addEventListener("click", () => {
 eraserBtn.addEventListener("click", () => {
     isErasing = !isErasing;
     eraserBtn.innerText = isErasing ? "Brush Mode" : "Eraser";
+});
+
+// Modal Functionality
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modal-title");
+const modalText = document.getElementById("modal-text");
+const closeBtn = document.querySelector(".close-btn");
+
+function showModal(title, text) {
+    modalTitle.innerText = title;
+    modalText.innerHTML = text;
+    modal.style.display = "block";
+}
+
+releaseNotesBtn.addEventListener("click", () => {
+    showModal("📜 Release Notes", `
+        - 🎨 Added color picker for brushes<br>
+        - 🖌️ Adjustable brush size for precision<br>
+        - 🧽 Eraser mode added<br>
+        - 💾 Save artwork as PNG feature<br>
+        - 🧹 Clear canvas option<br>
+    `);
+});
+
+upcomingFeaturesBtn.addEventListener("click", () => {
+    showModal("🚀 Upcoming Features", `
+        - ✍️ Custom brushes and textures<br>
+        - 🎨 Layers for advanced drawings<br>
+        - 🔄 Undo/Redo functionality<br>
+        - 📄 Load and save projects in progress<br>
+    `);
+});
+
+// Close modal when clicking "X" button
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Close modal when clicking outside
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
 });
