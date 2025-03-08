@@ -3,30 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dashboard - Steady Delusion Review</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="dashboard-container">
-        <h2>Welcome, <span id="playerName"></span>!</h2>
-        <p>Gender: <span id="playerGender"></span></p>
-        <button onclick="resetCharacter()">Reset Character</button>
-    </div>
+    <header>
+        <h1>Welcome, <span id="username">Guest</span>!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="login.html">🔑 Login</a></li>
+                <li><a href="signup.html">📝 Signup</a></li>
+                <li><a href="entertainment.html">🎮 Entertainment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard-content">
+            <h2>Quick Access</h2>
+            <div class="features">
+                <a href="games.html" class="feature-card">🎮 Play Games</a>
+                <a href="chatbot.html" class="feature-card">💬 AI Chatbot</a>
+                <a href="artstudio.html" class="feature-card">🎨 Art Studio</a>
+            </div>
+        </section>
+
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </main>
 
     <script>
-        // Load Player Data
-        const playerData = JSON.parse(localStorage.getItem("playerData"));
-
-        if (playerData) {
-            document.getElementById("playerName").innerText = playerData.name;
-            document.getElementById("playerGender").innerText = playerData.gender;
-        } else {
-            window.location.href = "character.html"; // If no data, redirect to character maker
+        // Load user data
+        const user = localStorage.getItem("username");
+        if (user) {
+            document.getElementById("username").innerText = user;
         }
 
-        function resetCharacter() {
-            localStorage.removeItem("playerData");
-            window.location.href = "character.html";
+        function logout() {
+            localStorage.removeItem("username");
+            window.location.href = "index.html"; // Redirect to home
         }
     </script>
 </body>
