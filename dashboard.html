@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Steady Delusion Review</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="dashboard.js" defer></script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><button id="logoutBtn">Logout</button></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <h2>Welcome to Your Dashboard</h2>
-        <p id="user-email">Loading...</p>
-        <p>This is a protected page. Only authenticated users can access this.</p>
+    <div class="dashboard-container">
+        <h2>Welcome, <span id="playerName"></span>!</h2>
+        <p>Gender: <span id="playerGender"></span></p>
+        <button onclick="resetCharacter()">Reset Character</button>
     </div>
+
+    <script>
+        // Load Player Data
+        const playerData = JSON.parse(localStorage.getItem("playerData"));
+
+        if (playerData) {
+            document.getElementById("playerName").innerText = playerData.name;
+            document.getElementById("playerGender").innerText = playerData.gender;
+        } else {
+            window.location.href = "character.html"; // If no data, redirect to character maker
+        }
+
+        function resetCharacter() {
+            localStorage.removeItem("playerData");
+            window.location.href = "character.html";
+        }
+    </script>
 </body>
 </html>
