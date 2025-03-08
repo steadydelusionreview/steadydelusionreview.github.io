@@ -9,39 +9,37 @@
 </head>
 <body>
     <div class="container">
-        <h2>Art Studio</h2>
+        <h2>🎨 Art Studio</h2>
         
+        <!-- Toolbar -->
         <div class="toolbar">
             <label>🎨 Color: <input type="color" id="colorPicker" value="#000000"></label>
-            <label>🖌️ Brush Size: <input type="range" id="brushSize" min="1" max="20" value="5"></label>
+            <label>🖌️ Size: <input type="range" id="brushSize" min="1" max="20" value="5"></label>
+            <label>🖋️ Brush:
+                <select id="brushType">
+                    <option value="round">Round</option>
+                    <option value="square">Square</option>
+                    <option value="spray">Spray</option>
+                    <option value="texture">Texture</option>
+                </select>
+            </label>
             <button id="eraserBtn">Eraser</button>
             <button id="clearCanvas">Clear</button>
-            <button id="saveCanvas">Download</button>
+            <button id="saveCanvas">Save</button>
         </div>
 
-        <canvas id="canvas" width="600" height="400"></canvas>
-<div class="toolbar">
-    <label>🎨 Color: <input type="color" id="colorPicker" value="#000000"></label>
-    <label>🖌️ Brush Size: <input type="range" id="brushSize" min="1" max="20" value="5"></label>
-    <label>🖋️ Brush Type:
-        <select id="brushType">
-            <option value="round">Round</option>
-            <option value="square">Square</option>
-            <option value="spray">Spray</option>
-            <option value="texture">Texture</option>
-        </select>
-    </label>
-    <button id="eraserBtn">Eraser</button>
-    <button id="clearCanvas">Clear</button>
-    <button id="saveCanvas">Download</button>
-</div>
-        <!-- Buttons for Release Notes & Upcoming Features -->
+        <!-- Drawing Canvas -->
+        <div class="canvas-container">
+            <canvas id="canvas" width="800" height="500"></canvas>
+        </div>
+
+        <!-- Info Buttons -->
         <div class="info-buttons">
             <button id="releaseNotesBtn">📜 Release Notes</button>
             <button id="upcomingFeaturesBtn">🚀 Upcoming Features</button>
         </div>
 
-        <!-- Modals for Displaying Information -->
+        <!-- Modal Popup -->
         <div id="modal" class="modal">
             <div class="modal-content">
                 <span class="close-btn">&times;</span>
