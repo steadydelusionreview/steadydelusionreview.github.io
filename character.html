@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="character-container">
+        <h2>🧑 Create Your Character</h2>
+        <label>Name: <input type="text" id="playerName"></label>
+        <label>Gender:
+            <select id="playerGender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </label>
+        <button id="startGame">Start Game</button>
+    </div>
+
+    <script>
+        document.getElementById("startGame").addEventListener("click", function() {
+            const name = document.getElementById("playerName").value;
+            const gender = document.getElementById("playerGender").value;
+
+            if (name.trim() === "") {
+                alert("Please enter a name!");
+                return;
+            }
+
+            // Save player data
+            const playerData = { name, gender };
+            localStorage.setItem("playerData", JSON.stringify(playerData));
+
+            // Redirect to Dashboard
+            window.location.href = "dashboard.html";
+        });
+    </script>
+</body>
+</html>
