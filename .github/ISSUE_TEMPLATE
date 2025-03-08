@@ -1,0 +1,23 @@
+---
+name: 🚀 Feature Request
+about: Suggest a new feature for the site
+title: "[Feature]: <Short description>"
+labels: enhancement
+assignees: ''
+
+---
+
+## 🚀 Feature Request
+_A clear and concise description of the feature you'd like._
+
+## 🤔 Why is this needed?
+_Explain why this feature would be useful for users._
+
+## 🛠 Possible Implementation
+_Describe how this could be implemented._
+
+## 📸 Screenshots / Mockups (if applicable)
+_If applicable, add visuals for better clarity._
+
+## 📝 Additional Information
+_Add any other context or considerations here._
