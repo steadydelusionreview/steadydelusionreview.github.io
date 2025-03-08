@@ -3,32 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steady Delusion Review</title>
+    <title>Home - Steady Delusion Review</title>
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="index.js" defer></script>
 </head>
 <body>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="signup.html">Signup</a></li>
+            <li><a href="login.html" id="loginLink">Login</a></li>
+            <li><a href="signup.html" id="signupLink">Signup</a></li>
+            <li><a href="dashboard.html" id="dashboardLink" style="display: none;">Dashboard</a></li>
+            <li><button id="logoutBtn" style="display: none;">Logout</button></li>
         </ul>
     </nav>
 
-    <header>
-        <h1>Welcome to Steady Delusion Review</h1>
-        <p>Your go-to place for insightful reviews.</p>
-    </header>
-
-    <main>
-        <section>
-            <h2>Latest Reviews</h2>
-            <p>Stay tuned for the latest content.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Steady Delusion Review. All rights reserved.</p>
-    </footer>
+    <div class="container">
+        <h2 id="welcomeMessage">Welcome to Steady Delusion Review</h2>
+        <p>This site provides insightful reviews. Please log in to access more features.</p>
+    </div>
 </body>
 </html>
