@@ -9,32 +9,40 @@ const eraserBtn = document.getElementById("eraserBtn");
 let painting = false;
 let isErasing = false;
 
-canvas.addEventListener("mousedown", startPosition);
-canvas.addEventListener("mouseup", stopPosition);
-canvas.addEventListener("mousemove", draw);
+// Adjust cursor position relative to canvas
+function getCursorPosition(event) {
+    const rect = canvas.getBoundingClientRect();
+    return {
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top
+    };
+}
 
-function startPosition() {
+canvas.addEventListener("mousedown", (event) => {
     painting = true;
     ctx.beginPath();
-}
+    let pos = getCursorPosition(event);
+    ctx.moveTo(pos.x, pos.y);
+});
 
-function stopPosition() {
+canvas.addEventListener("mouseup", () => {
     painting = false;
     ctx.beginPath();
-}
+});
 
-function draw(event) {
+canvas.addEventListener("mousemove", (event) => {
     if (!painting) return;
+    let pos = getCursorPosition(event);
 
     ctx.lineWidth = brushSize.value;
     ctx.lineCap = "round";
     ctx.strokeStyle = isErasing ? "#ffffff" : colorPicker.value;
 
-    ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+    ctx.lineTo(pos.x, pos.y);
     ctx.stroke();
     ctx.beginPath();
-    ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
-}
+    ctx.moveTo(pos.x, pos.y);
+});
 
 // Clear the canvas
 clearCanvas.addEventListener("click", () => {
