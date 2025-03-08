@@ -73,3 +73,35 @@ button {
 button:hover {
     background: #c82333;
 }
+.toolbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+canvas {
+    border: 2px solid #000;
+    cursor: crosshair;
+    background-color: white;
+}
+
+button {
+    background: #007BFF;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#eraserBtn {
+    background: #dc3545;
+}
+
+#eraserBtn:hover {
+    background: #c82333;
+}
